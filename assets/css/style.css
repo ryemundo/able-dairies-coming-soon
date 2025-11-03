@@ -1,0 +1,39 @@
+:root {
+  --color-principal: #008fd5;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--color-principal);
+  font-family: sans-serif;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  margin: 120px 16px;
+}
+a {
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+}
+.button {
+  background-color: white;
+  color: var(--color-principal);
+  border-radius: 16px;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 16px 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 2px solid var(--color-principal);
+  transition: 200ms;
+}
+.button:hover {
+  background-color: var(--color-principal);
+  color: white;
+  border-color: white;
+}
