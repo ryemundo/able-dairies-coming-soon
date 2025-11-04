@@ -94,7 +94,33 @@ video {
   position: absolute;
   bottom: 40px;
 }
-
+/* Change language */
+.change-language {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: white;
+  cursor: pointer;
+}
+.current-language {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid white;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 10px;
+}
+.change-language img {
+  width: 20px;
+}
+.change-language span {
+  font-size: 16px;
+}
+#change-language-arrow {
+  width: 16px;
+}
 /*-- MORE INFO --*/
 .more-info {
   padding: 60px var(--side-margin) 120px var(--side-margin);
