@@ -15,15 +15,16 @@
     />
   </head>
   <body>
-    <div class="change-language">
-      <div class="current-language">
-        <img src="./assets/img/language.svg" alt="World icon" />
-        <span>English</span>
-        <img
-          id="change-language-arrow"
-          src="./assets/img/change_language_arrow.svg"
-        />
-      </div>
+    <div class="language-button" id="current-language">
+      <img src="./assets/img/language.svg" alt="World icon" />
+      <span>English</span>
+      <img
+        id="change-language-arrow"
+        src="./assets/img/change_language_arrow.svg"
+      />
+    </div>
+    <div class="language-button" id="other-language">
+      <a href="../index.html"><div>Spanish</div></a>
     </div>
     <video autoplay muted loop id="myVideo">
       <source src="./assets/vid/background_video.mp4" type="video/mp4" />
@@ -41,7 +42,7 @@
           />
         </div>
         <!-- .logos -->
-        <h1>Coming soon...</h1>
+        <h1>Coming soon<span>...</span></h1>
         <p>
           Thank you for your interest, we are working to give you the best
           experience.
@@ -136,5 +137,6 @@
         alt="ABLE: Adding Betterment to Life's Expectations"
       />
     </footer>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>

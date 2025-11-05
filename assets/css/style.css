@@ -29,7 +29,6 @@ h3 {
 h1 {
   text-transform: uppercase;
   font-size: 7em;
-  margin-top: 160px;
   margin-bottom: 12px;
   filter: drop-shadow(3px 3px 5px #000000);
   text-align: center;
@@ -67,12 +66,13 @@ video {
 .cover {
   width: 100%;
   height: 100vh;
-  padding: 60px var(--side-margin);
+  padding: 0 var(--side-margin);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
+  background-color: #008fd5;
 }
 .logos {
   display: flex;
@@ -86,7 +86,6 @@ video {
 }
 .cover > p {
   font-size: 1.4em;
-  margin-bottom: 200px;
   filter: drop-shadow(1px 1px 5px #000000);
   text-align: center;
 }
@@ -95,31 +94,65 @@ video {
   bottom: 40px;
 }
 /* Change language */
-.change-language {
+.language-button {
+  height: 32px;
+  width: 130px;
   position: absolute;
   top: 30px;
   right: 30px;
   color: white;
-  cursor: pointer;
-}
-.current-language {
+  border: 1px solid white;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  cursor: pointer;
+}
+#current-language {
   align-items: center;
   gap: 10px;
-  border: 1px solid white;
+  z-index: 200;
+  border-radius: 16px;
+}
+#current-language:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#other-language {
+  text-align: center;
+  line-height: 32px;
+  opacity: 0;
+  border-top: 0;
+  border-radius: 0 0 16px 16px;
+  align-items: flex-end;
+  transition-duration: 300ms;
+}
+#other-language a {
+  color: white;
+  text-decoration: none;
+}
+#other-language div {
+  width: 130px;
   height: 32px;
   border-radius: 16px;
-  padding: 0 10px;
 }
-.change-language img {
+#other-language div:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#current-language img {
   width: 20px;
 }
-.change-language span {
+#current-language span {
   font-size: 16px;
 }
 #change-language-arrow {
   width: 16px;
+}
+#change-language-arrow.active {
+  transform: rotate(180deg);
+}
+#other-language.active {
+  opacity: 100;
+  height: 48px;
+  transform: translateY(16px);
 }
 /*-- MORE INFO --*/
 .more-info {
@@ -222,6 +255,7 @@ footer {
   flex-direction: row;
   color: white;
   justify-content: space-between;
+  gap: 60px;
 }
 footer p {
   font-size: 1.2em;
@@ -229,4 +263,147 @@ footer p {
 }
 footer img {
   width: 350px;
+}
+
+/*-- RESPONSIVE --*/
+/* Pre-tablet (width:900px) */
+@media (max-width: 1120px) {
+  .cover {
+    background-color: rgba(255, 0, 0, 0.7);
+  }
+  .cover span {
+    display: none;
+  }
+  footer img {
+    width: 300px;
+  }
+}
+/* Tablet (width:900px) */
+@media (max-width: 900px) {
+  :root {
+    --side-margin: 40px;
+  }
+  .cover {
+    background-color: rgba(0, 143, 213, 0.7);
+    padding: var(--side-margin);
+  }
+  .logos {
+    gap: 16px;
+    top: 60px;
+  }
+  .logos img {
+    width: 150px;
+  }
+  h1 {
+    font-size: 5em;
+  }
+  h2 {
+    text-align: center;
+    width: 100%;
+  }
+  h3 {
+    font-size: 2.4em;
+  }
+  .logos {
+    top: 100px;
+  }
+  .more-info {
+    padding: 40px var(--side-margin) 80px var(--side-margin);
+  }
+  .contact-us {
+    flex-direction: column;
+    gap: 60px;
+  }
+  form {
+    width: 100%;
+  }
+  input[type="submit"] {
+    margin: 0 auto;
+  }
+  .follow-us {
+    width: 100%;
+    text-align: center;
+  }
+  .social {
+    justify-content: center;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+  footer img {
+    width: 250px;
+  }
+}
+/* Mobile (width:600px) */
+@media (max-width: 600px) {
+  .cover {
+    background-color: rgba(0, 255, 0, 0.7);
+  }
+  :root {
+    --side-margin: 16px;
+  }
+  .logos {
+    position: static;
+    margin-bottom: 24px;
+  }
+  .logos img {
+    width: 110px;
+  }
+  h1 {
+    font-size: 3.5em;
+    margin-bottom: 8px;
+  }
+  h2,
+  h3 {
+    font-size: 1.7em;
+  }
+  .cover > p {
+    font-size: 1.1em;
+  }
+  #downward-arrow {
+    bottom: 24px;
+    width: 24px;
+  }
+  .language-button {
+    height: 32px;
+    width: 130px;
+    top: 16px;
+    right: 16px;
+  }
+  .more-info {
+    padding: 16px var(--side-margin) 60px var(--side-margin);
+  }
+  input,
+  textarea {
+    margin-bottom: 24px;
+    font-size: 1em;
+    padding: 8px;
+  }
+  input[type="submit"] {
+    font-size: 1.2em;
+  }
+  input[type="submit"]:hover {
+    background-color: var(--color-principal);
+  }
+  label {
+    font-size: 1.1em;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .yellow {
+    height: 80px;
+  }
+  footer {
+    gap: 16px;
+  }
+  footer p {
+    font-size: 1em;
+  }
+  footer img {
+    font-size: 1em;
+    width: 180px;
+  }
 }
