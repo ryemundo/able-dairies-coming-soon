@@ -396,7 +396,8 @@ footer img {
     height: 80px;
   }
   footer {
-    gap: 16px;
+    gap: 24px;
+    padding: 32px var(--side-margin);
   }
   footer p {
     font-size: 1em;
